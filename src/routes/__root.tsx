@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportVibeError } from "../lib/vibe-error-reporting";
+import { StoreChrome } from "../components/store/StoreChrome";
 
 function NotFoundComponent() {
   return (
@@ -77,18 +78,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Studio App" },
-      { name: "description", content: "AI Studio Generated Project" },
-      { name: "author", content: "AI Studio" },
-      { property: "og:title", content: "AI Studio App" },
-      { property: "og:description", content: "AI Studio Generated Project" },
+      { title: "Top 5 Reasons Why Insurance Agents Fail | Eric Howard" },
+      {
+        name: "description",
+        content:
+          "Discover Eric Howard's book, Top 5 Reasons Why Insurance Agents Fail. Learn about the habits, mindset traps, and mistakes that can hold insurance agents back. Available in paperback, e-book, and audiobook.",
+      },
+      { name: "author", content: "Eric Howard" },
+      { property: "og:title", content: "Top 5 Reasons Why Insurance Agents Fail | Eric Howard" },
+      {
+        property: "og:description",
+        content:
+          "Discover Eric Howard's book, Top 5 Reasons Why Insurance Agents Fail. Learn about the habits, mindset traps, and mistakes that can hold insurance agents back. Available in paperback, e-book, and audiobook.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
   }),
@@ -117,8 +129,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <StoreChrome>
+        <Outlet />
+      </StoreChrome>
     </QueryClientProvider>
   );
 }

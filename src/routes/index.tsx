@@ -1,24 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HomeHero } from "../components/store/sections/HomeHero";
+import { PurchaseSection } from "../components/store/sections/PurchaseSection";
+import { MarqueeStrip } from "../components/store/sections/MarqueeStrip";
+import { ProblemSection } from "../components/store/sections/ProblemSection";
+import { InsideTheBook } from "../components/store/sections/InsideTheBook";
+import { BookDetail } from "../components/store/sections/BookDetail";
+import { AuthorSpotlight } from "../components/store/sections/AuthorSpotlight";
+import { AudienceCards } from "../components/store/sections/AudienceCards";
+import { FormatComparison } from "../components/store/sections/FormatComparison";
+import { FaqSection } from "../components/store/sections/FaqSection";
+import { FinalCta } from "../components/store/sections/FinalCta";
+import { EmailSignup } from "../components/store/sections/EmailSignup";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Top 5 Reasons Why Insurance Agents Fail | Eric Howard" },
+      {
+        name: "description",
+        content:
+          "Discover Eric Howard's book, Top 5 Reasons Why Insurance Agents Fail. Learn about the habits, mindset traps, and mistakes that can hold insurance agents back. Available in paperback, e-book, and audiobook.",
+      },
+      { property: "og:title", content: "Top 5 Reasons Why Insurance Agents Fail | Eric Howard" },
+      {
+        property: "og:description",
+        content:
+          "Discover Eric Howard's book, Top 5 Reasons Why Insurance Agents Fail. Learn about the habits, mindset traps, and mistakes that can hold insurance agents back. Available in paperback, e-book, and audiobook.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-vibe-blank-page-placeholder="REMOVE_THIS"
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIyNCIgZmlsbD0iI2YxZWZlNyIvPjxwYXRoIGQ9Ik0xMDAgNjR2NzJNNjQgMTAwaDcyIiBzdHJva2U9IiNjOWM0YjUiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <HomeHero />
+      <PurchaseSection />
+      <MarqueeStrip />
+      <ProblemSection />
+      <InsideTheBook />
+      <BookDetail />
+      <AuthorSpotlight />
+      <AudienceCards />
+      <FormatComparison />
+      <FaqSection />
+      <FinalCta />
+      <EmailSignup />
+    </>
   );
 }

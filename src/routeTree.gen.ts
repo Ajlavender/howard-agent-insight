@@ -10,33 +10,168 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutEricRouteImport } from './routes/about-eric'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DigitalDeliveryRouteImport } from './routes/digital-delivery'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as OrderConfirmationRouteImport } from './routes/order-confirmation'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
+import { Route as ProductsTop5ReasonsWhyInsuranceAgentsFailRouteImport } from './routes/products.top-5-reasons-why-insurance-agents-fail'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutEricRoute = AboutEricRouteImport.update({
+  id: '/about-eric',
+  path: '/about-eric',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalDeliveryRoute = DigitalDeliveryRouteImport.update({
+  id: '/digital-delivery',
+  path: '/digital-delivery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderConfirmationRoute = OrderConfirmationRouteImport.update({
+  id: '/order-confirmation',
+  path: '/order-confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsTop5ReasonsWhyInsuranceAgentsFailRoute =
+  ProductsTop5ReasonsWhyInsuranceAgentsFailRouteImport.update({
+    id: '/products/top-5-reasons-why-insurance-agents-fail',
+    path: '/products/top-5-reasons-why-insurance-agents-fail',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-eric': typeof AboutEricRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/digital-delivery': typeof DigitalDeliveryRoute
+  '/faq': typeof FaqRoute
+  '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/products/top-5-reasons-why-insurance-agents-fail': typeof ProductsTop5ReasonsWhyInsuranceAgentsFailRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-eric': typeof AboutEricRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/digital-delivery': typeof DigitalDeliveryRoute
+  '/faq': typeof FaqRoute
+  '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/products/top-5-reasons-why-insurance-agents-fail': typeof ProductsTop5ReasonsWhyInsuranceAgentsFailRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-eric': typeof AboutEricRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/digital-delivery': typeof DigitalDeliveryRoute
+  '/faq': typeof FaqRoute
+  '/order-confirmation': typeof OrderConfirmationRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-policy': typeof RefundPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/products/top-5-reasons-why-insurance-agents-fail': typeof ProductsTop5ReasonsWhyInsuranceAgentsFailRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-eric'
+    | '/checkout'
+    | '/contact'
+    | '/digital-delivery'
+    | '/faq'
+    | '/order-confirmation'
+    | '/privacy-policy'
+    | '/refund-policy'
+    | '/terms-and-conditions'
+    | '/products/top-5-reasons-why-insurance-agents-fail'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-eric'
+    | '/checkout'
+    | '/contact'
+    | '/digital-delivery'
+    | '/faq'
+    | '/order-confirmation'
+    | '/privacy-policy'
+    | '/refund-policy'
+    | '/terms-and-conditions'
+    | '/products/top-5-reasons-why-insurance-agents-fail'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-eric'
+    | '/checkout'
+    | '/contact'
+    | '/digital-delivery'
+    | '/faq'
+    | '/order-confirmation'
+    | '/privacy-policy'
+    | '/refund-policy'
+    | '/terms-and-conditions'
+    | '/products/top-5-reasons-why-insurance-agents-fail'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutEricRoute: typeof AboutEricRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ContactRoute: typeof ContactRoute
+  DigitalDeliveryRoute: typeof DigitalDeliveryRoute
+  FaqRoute: typeof FaqRoute
+  OrderConfirmationRoute: typeof OrderConfirmationRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  ProductsTop5ReasonsWhyInsuranceAgentsFailRoute: typeof ProductsTop5ReasonsWhyInsuranceAgentsFailRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +183,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-eric': {
+      id: '/about-eric'
+      path: '/about-eric'
+      fullPath: '/about-eric'
+      preLoaderRoute: typeof AboutEricRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-delivery': {
+      id: '/digital-delivery'
+      path: '/digital-delivery'
+      fullPath: '/digital-delivery'
+      preLoaderRoute: typeof DigitalDeliveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order-confirmation': {
+      id: '/order-confirmation'
+      path: '/order-confirmation'
+      fullPath: '/order-confirmation'
+      preLoaderRoute: typeof OrderConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/top-5-reasons-why-insurance-agents-fail': {
+      id: '/products/top-5-reasons-why-insurance-agents-fail'
+      path: '/products/top-5-reasons-why-insurance-agents-fail'
+      fullPath: '/products/top-5-reasons-why-insurance-agents-fail'
+      preLoaderRoute: typeof ProductsTop5ReasonsWhyInsuranceAgentsFailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutEricRoute: AboutEricRoute,
+  CheckoutRoute: CheckoutRoute,
+  ContactRoute: ContactRoute,
+  DigitalDeliveryRoute: DigitalDeliveryRoute,
+  FaqRoute: FaqRoute,
+  OrderConfirmationRoute: OrderConfirmationRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
+  ProductsTop5ReasonsWhyInsuranceAgentsFailRoute:
+    ProductsTop5ReasonsWhyInsuranceAgentsFailRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
