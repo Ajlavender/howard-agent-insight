@@ -3,8 +3,8 @@ import { BookCoverMock } from "./HomeHero";
 
 export function BookDetail() {
   return (
-    <section className="bg-charcoal py-24 text-white sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-charcoal py-20 text-white sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div className="flex justify-center">
             <div className="relative aspect-[3/4] w-full max-w-sm">

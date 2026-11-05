@@ -4,9 +4,9 @@ import { ERIC_PORTRAIT } from "@/lib/book-data";
 
 export function AuthorSpotlight() {
   return (
-    <section className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+    <section className="bg-white py-20 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center sm:gap-16">
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-ink">
               <img
@@ -63,7 +63,7 @@ export function AuthorSpotlight() {
 
             <Link
               to="/about-eric"
-              className="mt-8 inline-flex items-center justify-center border border-ink px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-white"
+              className="mt-8 inline-flex min-h-12 items-center justify-center border border-ink px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-white active:scale-95"
             >
               Read More About Eric
             </Link>

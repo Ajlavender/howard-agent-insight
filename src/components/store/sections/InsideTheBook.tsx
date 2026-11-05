@@ -3,8 +3,8 @@ import { THEMES } from "@/lib/book-data";
 
 export function InsideTheBook() {
   return (
-    <section id="inside" className="bg-ink py-24 text-white sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="inside" className="bg-ink py-20 text-white sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
             Between the Covers
@@ -19,7 +19,7 @@ export function InsideTheBook() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:gap-8 md:grid-cols-3">
           {THEMES.map((t) => (
             <div
               key={t.n}

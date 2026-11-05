@@ -4,17 +4,17 @@ import { BOOK, BOOK_COVER_FRONT } from "@/lib/book-data";
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-ink text-white">
+    <section className="relative min-h-dvh overflow-hidden bg-ink text-white">
       {/* ambient cyan glow */}
       <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full bg-cyan/10 blur-[140px]" />
       <div className="pointer-events-none absolute left-1/4 top-0 h-px w-1/2 bg-linear-to-r from-transparent via-white/15 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-4 pt-28 pb-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div className="relative mx-auto grid min-h-dvh max-w-7xl items-center gap-10 px-5 pt-28 pb-24 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
             {BOOK.creator}
           </p>
-          <h1 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-display text-[2.6rem] font-bold leading-[0.98] tracking-tight text-balance sm:text-6xl lg:text-7xl">
             Most insurance agents don't see failure coming.
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">
@@ -22,17 +22,17 @@ export function HomeHero() {
             career, from a man who's spent decades in the industry.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
             <Link
               to="/products/top-5-reasons-why-insurance-agents-fail"
-              className="group inline-flex items-center justify-center gap-2 bg-cyan px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.02]"
+              className="group inline-flex min-h-12 flex-1 items-center justify-center gap-2 bg-cyan px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.02]"
             >
               Get the Book
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
               href="#inside"
-              className="inline-flex items-center justify-center gap-2 border border-white/30 px-8 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-cyan hover:text-cyan"
+              className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/30 px-8 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-cyan hover:text-cyan"
             >
               See What's Inside
             </a>
@@ -49,9 +49,9 @@ export function HomeHero() {
 
         {/* Book visual */}
         <div className="relative flex items-center justify-center">
-          <div className="relative">
+          <div className="relative w-full max-w-[20rem] sm:max-w-sm">
             <div className="absolute -inset-8 rounded-full bg-white/5 blur-3xl" />
-            <div className="relative aspect-[3/4] w-64 sm:w-80 lg:w-96">
+            <div className="relative aspect-[3/4] w-64 max-w-full sm:w-80 lg:w-96">
               <BookCoverMock />
             </div>
           </div>

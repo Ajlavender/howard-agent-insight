@@ -50,8 +50,8 @@ export function PurchaseSection() {
   };
 
   return (
-    <section id="purchase" className="bg-soft py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="purchase" className="bg-soft py-20 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             One Book
@@ -65,7 +65,7 @@ export function PurchaseSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 sm:gap-12 sm:mt-16">
           {/* Gallery */}
           <div className="flex flex-col items-center justify-center">
             <div className="relative aspect-[3/4] w-full max-w-sm">
@@ -112,21 +112,21 @@ export function PurchaseSection() {
             </p>
 
             {/* Format selector */}
-            <div className="mt-8 grid grid-cols-2 gap-3">
+            <div className="mt-8 grid grid-cols-2 gap-2.5 sm:gap-3">
               {formats.map((f) => {
                 const active = f.key === selected;
                 return (
                   <button
                     key={f.key}
                     onClick={() => setSelected(f.key)}
-                    className={`relative rounded-lg border p-4 text-left transition-all ${
+                    className={`relative min-h-20 rounded-lg border p-3 text-left transition-all sm:p-4 ${
                       active
                         ? "border-cyan bg-ink text-white shadow-lg"
                         : "border-line bg-white hover:border-foreground/30"
                     }`}
                   >
                     {f.featured && (
-                      <span className="absolute -top-2 left-4 bg-cyan px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-ink">
+                      <span className="absolute -top-2 left-3 bg-cyan px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-ink sm:left-4">
                         Featured
                       </span>
                     )}
@@ -163,10 +163,13 @@ export function PurchaseSection() {
             {/* Quantity + actions */}
             {!current?.external && (
               <div className="mt-6 flex items-center gap-4">
+                <span className="hidden text-xs uppercase tracking-widest text-muted-foreground sm:inline">
+                  Qty
+                </span>
                 <div className="flex items-center border border-line">
                   <button
                     onClick={() => setQty((q) => Math.max(1, q - 1))}
-                    className="flex h-11 w-11 items-center justify-center hover:bg-muted"
+                    className="flex h-11 w-11 items-center justify-center hover:bg-muted active:scale-95"
                     aria-label="Decrease quantity"
                   >
                     −
@@ -174,7 +177,7 @@ export function PurchaseSection() {
                   <span className="w-12 text-center font-medium">{qty}</span>
                   <button
                     onClick={() => setQty((q) => Math.min(99, q + 1))}
-                    className="flex h-11 w-11 items-center justify-center hover:bg-muted"
+                    className="flex h-11 w-11 items-center justify-center hover:bg-muted active:scale-95"
                     aria-label="Increase quantity"
                   >
                     +
@@ -199,14 +202,14 @@ export function PurchaseSection() {
                   <button
                     onClick={buyNow}
                     disabled={!current?.priceId}
-                    className="inline-flex flex-1 items-center justify-center gap-2 bg-cyan px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.01] disabled:opacity-50"
+                    className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 bg-cyan px-8 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.01] active:scale-95 disabled:opacity-50"
                   >
                     {current?.cta ?? "Get the Book"}
                   </button>
                   <button
                     onClick={addToCart}
                     disabled={!current?.priceId}
-                    className="inline-flex items-center justify-center gap-2 border border-ink px-6 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-white disabled:opacity-50"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 border border-ink px-6 py-4 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-white active:scale-95 disabled:opacity-50"
                   >
                     <ShoppingBag className="h-4 w-4" />
                     Add to Cart

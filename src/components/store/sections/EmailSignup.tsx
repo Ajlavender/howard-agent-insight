@@ -19,8 +19,8 @@ export function EmailSignup() {
   };
 
   return (
-    <section className="bg-white py-24 sm:py-28">
-      <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-28">
+      <div className="mx-auto max-w-2xl px-5 text-center sm:px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
           Stay in the Loop
         </p>
@@ -43,11 +43,14 @@ export function EmailSignup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
-              className="h-12 flex-1 rounded-md border border-input bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-cyan"
+              inputMode="email"
+              autoCapitalize="off"
+              autoCorrect="off"
+              className="h-12 flex-1 rounded-md border border-input bg-background px-4 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-cyan sm:text-sm"
             />
             <button
               type="submit"
-              className="h-12 bg-cyan px-8 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.02]"
+              className="h-12 shrink-0 bg-cyan px-8 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.02] active:scale-95"
             >
               Keep Me Updated
             </button>

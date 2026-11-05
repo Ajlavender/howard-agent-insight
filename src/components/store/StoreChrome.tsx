@@ -15,7 +15,7 @@ const NAV = [
 
 export function AnnouncementBar() {
   return (
-    <div className="bg-ink text-white font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
+    <div className="bg-ink pt-safe text-white font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
       <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="hidden sm:block text-[10px] tracking-[0.25em] text-white/40">
           OFFICIAL STORE OF ERIC HOWARD
@@ -51,6 +51,14 @@ export function StoreHeader() {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -65,7 +73,7 @@ export function StoreHeader() {
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-white hover:bg-white/10 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 active:scale-95 lg:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -121,10 +129,10 @@ export function StoreHeader() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Open shopping cart"
-            className="group relative flex h-11 items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-4 text-white transition-all hover:border-cyan hover:bg-white/10"
+            className="group relative flex h-11 min-w-11 items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 text-white transition-all hover:border-cyan hover:bg-white/10 active:scale-95 sm:px-4"
           >
             <ShoppingBag className="h-4 w-4 text-cyan transition-transform group-hover:scale-110" />
-            <span className="hidden sm:inline text-xs font-bold uppercase tracking-widest">
+            <span className="hidden text-xs font-bold uppercase tracking-widest sm:inline">
               Cart
             </span>
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan px-1.5 text-[10px] font-black text-ink">
@@ -147,7 +155,7 @@ export function StoreHeader() {
           onClick={() => setMobileOpen(false)}
         />
         <div
-          className={`absolute left-0 top-0 flex h-full w-85 max-w-[85%] flex-col bg-ink p-6 text-white shadow-2xl border-r border-white/10 transition-transform duration-300 ${
+          className={`absolute left-0 top-0 flex h-full w-[86vw] max-w-sm flex-col bg-ink p-5 pt-safe pb-safe text-white shadow-2xl border-r border-white/10 transition-transform duration-300 ease-out ${
             mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -161,7 +169,7 @@ export function StoreHeader() {
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
-              className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 text-white/70 hover:text-white"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white active:scale-95"
             >
               <X className="h-5 w-5" />
             </button>
@@ -179,10 +187,10 @@ export function StoreHeader() {
               <Link
                 key={item.label}
                 to={item.to}
-                className="py-4 text-xs font-bold uppercase tracking-[0.2em] text-white/90 transition-colors hover:text-cyan flex items-center justify-between"
+                className="flex min-h-12 items-center justify-between py-4 text-sm font-bold uppercase tracking-[0.2em] text-white/90 transition-colors hover:text-cyan active:text-cyan"
               >
                 {item.label}
-                <span className="text-white/30 text-xs">→</span>
+                <span className="text-xs text-white/30">→</span>
               </Link>
             ))}
           </nav>

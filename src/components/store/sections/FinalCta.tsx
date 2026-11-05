@@ -3,11 +3,11 @@ import { BookCoverMock } from "./HomeHero";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 text-white sm:py-32">
+    <section className="relative overflow-hidden bg-ink py-20 text-white sm:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-linear-to-r from-transparent via-white/15 to-transparent" />
       <div className="pointer-events-none absolute -left-20 bottom-0 h-96 w-96 rounded-full bg-cyan/5 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="flex justify-center order-2 lg:order-1">
             <div className="aspect-[3/4] w-64 sm:w-72">

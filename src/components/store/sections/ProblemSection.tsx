@@ -11,8 +11,8 @@ const POINTS = [
 
 export function ProblemSection() {
   return (
-    <section className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
@@ -42,16 +42,16 @@ export function ProblemSection() {
             </Link>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-3 sm:gap-4">
             {POINTS.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 border-l-2 border-foreground/15 bg-soft p-5 transition-all hover:translate-x-1 hover:border-cyan"
+                className="flex min-h-14 items-center gap-4 border-l-2 border-foreground/15 bg-soft p-4 transition-all hover:translate-x-1 hover:border-cyan sm:p-5"
               >
-                <span className="font-display text-2xl font-bold text-muted-foreground/60">
+                <span className="font-display text-xl font-bold text-muted-foreground/60 sm:text-2xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="font-medium text-foreground">{p}</p>
+                <p className="text-sm font-medium text-foreground sm:text-base">{p}</p>
               </div>
             ))}
           </div>

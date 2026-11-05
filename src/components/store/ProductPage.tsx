@@ -61,7 +61,7 @@ export function ProductPage() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pb-28 pt-16 lg:pb-0">
       {/* Breadcrumb */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground">
@@ -270,6 +270,49 @@ export function ProductPage() {
       <ReviewsSection />
       <FaqSection />
       <FinalCta />
+
+      {/* Sticky mobile purchase bar */}
+      {current && (
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] backdrop-blur-md lg:hidden">
+          <div className="flex items-center gap-3 px-4 py-3 pb-safe">
+            <img
+              src={activeSrc}
+              alt={BOOK.title}
+              className="h-14 w-10 shrink-0 rounded-sm object-cover"
+            />
+            <div className="min-w-0 flex-1">
+              <p className="truncate font-display text-sm font-bold text-foreground">
+                {current.name}
+              </p>
+              <p className="truncate text-xs text-muted-foreground">
+                {current.external
+                  ? "Paperback · Fulfilled by Lulu"
+                  : current.available
+                    ? formatPrice(current.price, current.currency)
+                    : "Price at checkout"}
+              </p>
+            </div>
+            {current.external ? (
+              <a
+                href={current.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center gap-1.5 rounded-full bg-cyan px-6 text-xs font-bold uppercase tracking-widest text-ink transition-transform active:scale-95"
+              >
+                {current.cta}
+              </a>
+            ) : (
+              <button
+                onClick={buyNow}
+                disabled={!current.priceId}
+                className="inline-flex min-h-12 items-center gap-1.5 rounded-full bg-cyan px-6 text-xs font-bold uppercase tracking-widest text-ink transition-transform active:scale-95 disabled:opacity-50"
+              >
+                {current.cta}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

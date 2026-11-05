@@ -6,8 +6,8 @@ import { FAQS } from "@/lib/book-data";
 export function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-soft py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="bg-soft py-20 sm:py-32">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             FAQ
@@ -24,9 +24,9 @@ export function FaqSection() {
               <div key={i}>
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  className="flex min-h-14 w-full items-center justify-between gap-4 py-5 text-left"
                 >
-                  <span className="font-display text-base font-semibold text-foreground">
+                  <span className="font-display text-sm font-semibold text-foreground sm:text-base">
                     {f.q}
                   </span>
                   <span className="shrink-0 text-foreground/60">

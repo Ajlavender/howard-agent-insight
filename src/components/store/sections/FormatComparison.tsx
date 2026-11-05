@@ -43,8 +43,8 @@ const CARDS = [
 
 export function FormatComparison() {
   return (
-    <section className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             Your Book
@@ -54,7 +54,7 @@ export function FormatComparison() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {CARDS.map((c) => {
             const Icon = c.icon;
             const inner = (
@@ -79,7 +79,7 @@ export function FormatComparison() {
                 href={LULU_PAPERBACK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col rounded-lg border border-line bg-soft p-8 transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-xl"
+                className="group flex flex-col rounded-lg border border-line bg-soft p-6 transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-xl sm:p-8"
               >
                 {inner}
               </a>
@@ -87,7 +87,7 @@ export function FormatComparison() {
               <Link
                 key={c.title}
                 to={c.to}
-                className="group flex flex-col rounded-lg border border-line bg-soft p-8 transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-xl"
+                className="group flex flex-col rounded-lg border border-line bg-soft p-6 transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-xl sm:p-8"
               >
                 {inner}
               </Link>

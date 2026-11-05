@@ -185,7 +185,7 @@ export function ReviewsSection() {
 
         {/* Written reviews carousel */}
         {mode === "written" && (
-          <div className="mt-14">
+          <div className="mt-10 sm:mt-14">
             <Carousel
               opts={{ align: "start", loop: false }}
               setApi={setWrittenApi}
@@ -195,9 +195,9 @@ export function ReviewsSection() {
               <div className="mb-8 flex justify-end">
                 <CarouselArrows api={writtenApi} />
               </div>
-              <CarouselContent className="-ml-4">
+              <CarouselContent className="-ml-3 sm:-ml-4">
                 {WRITTEN_REVIEWS.map((r, i) => (
-                  <CarouselItem key={i} className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={i} className="basis-full pl-3 sm:basis-1/2 lg:basis-1/3">
                     <figure className="flex h-full min-h-[20rem] flex-col justify-between rounded-lg border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-cyan/40">
                       <div>
                         <Quote className="h-7 w-7 text-cyan/50" />
@@ -228,7 +228,7 @@ export function ReviewsSection() {
 
         {/* Video reviews carousel */}
         {mode === "video" && (
-          <div className="mt-14">
+          <div className="mt-10 sm:mt-14">
             <Carousel
               opts={{ align: "start", loop: false }}
               setApi={setVideoApi}
@@ -237,9 +237,9 @@ export function ReviewsSection() {
               <div className="mb-8 flex justify-end">
                 <CarouselArrows api={videoApi} />
               </div>
-              <CarouselContent className="-ml-4">
+              <CarouselContent className="-ml-3 sm:-ml-4">
                 {VIDEO_REVIEWS.map((r, i) => (
-                  <CarouselItem key={i} className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={i} className="basis-full pl-3 sm:basis-1/2 lg:basis-1/3">
                     <button
                       onClick={() => setActiveVideo(r)}
                       className="group block w-full overflow-hidden rounded-lg border border-white/10 text-left transition-all hover:border-cyan/40"

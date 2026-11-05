@@ -10,6 +10,14 @@ export function CartDrawer() {
 
   useEffect(() => setMounted(true), []);
 
+  useEffect(() => {
+    if (!open) return;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const fmt = (n: number) =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -37,7 +45,7 @@ export function CartDrawer() {
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-line px-6 py-5">
+        <div className="flex items-center justify-between border-b border-line px-6 py-5 pt-safe">
           <h2 className="font-display text-lg font-bold">
             Your Cart{" "}
             {mounted && count > 0 && <span className="text-muted-foreground">({count})</span>}
@@ -45,7 +53,7 @@ export function CartDrawer() {
           <button
             onClick={() => setOpen(false)}
             aria-label="Close cart"
-            className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-muted"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground active:scale-95"
           >
             <X className="h-5 w-5" />
           </button>
@@ -124,7 +132,7 @@ export function CartDrawer() {
               ))}
             </div>
 
-            <div className="border-t border-line px-6 py-5">
+            <div className="border-t border-line px-6 py-5 pb-safe">
               <div className="flex items-center justify-between">
                 <span className="text-sm uppercase tracking-widest text-muted-foreground">
                   Subtotal
