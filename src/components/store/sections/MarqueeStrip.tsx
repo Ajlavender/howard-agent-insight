@@ -1,9 +1,4 @@
-const ITEMS = [
-  "Less Guesswork",
-  "Better Habits",
-  "Stronger Foundations",
-  "Learn From Experience",
-];
+const ITEMS = ["Less Guesswork", "Better Habits", "Stronger Foundations", "Learn From Experience"];
 
 export function MarqueeStrip() {
   const row = [...ITEMS, ...ITEMS, ...ITEMS, ...ITEMS];

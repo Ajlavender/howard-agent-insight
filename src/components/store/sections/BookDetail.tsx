@@ -18,8 +18,8 @@ export function BookDetail() {
               Built for the agent who wants more than another pep talk.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/70">
-              Straightforward perspective from someone who has spent decades learning,
-              teaching, and working in the insurance industry.
+              Straightforward perspective from someone who has spent decades learning, teaching, and
+              working in the insurance industry.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-white/10">
@@ -38,8 +38,8 @@ export function BookDetail() {
                 Look Inside
               </p>
               <p className="mt-2 text-sm text-white/60">
-                Authentic interior pages will appear here when approved spreads are available.
-                Until then, browse the cover and format gallery on the product page.
+                Authentic interior pages will appear here when approved spreads are available. Until
+                then, browse the cover and format gallery on the product page.
               </p>
             </div>
           </div>

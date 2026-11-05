@@ -1,4 +1,8 @@
-import { listCatalogProducts, type CatalogProduct, type CatalogPrice } from "@/integrations/payments";
+import {
+  listCatalogProducts,
+  type CatalogProduct,
+  type CatalogPrice,
+} from "@/integrations/payments";
 import { FORMATS, type BookFormat, type FormatKey } from "./book-data";
 
 export interface ResolvedFormat extends BookFormat {
@@ -21,9 +25,12 @@ export async function resolveFormats(): Promise<{
   let product: CatalogProduct | null = null;
   try {
     const page = await listCatalogProducts({ search: "Top 5 Reasons", limit: 24, offset: 0 });
-    product = page.products.find((p) =>
-      /top 5 reasons/i.test(p.name) || /insurance agents fail/i.test(p.name),
-    ) ?? page.products[0] ?? null;
+    product =
+      page.products.find(
+        (p) => /top 5 reasons/i.test(p.name) || /insurance agents fail/i.test(p.name),
+      ) ??
+      page.products[0] ??
+      null;
   } catch {
     product = null;
   }
@@ -91,10 +98,7 @@ export const CHECKOUT_SELECTION_KEY = "vibe.checkout.selection.v1";
 
 export function writeCheckoutSelection(items: Array<{ priceId: string; quantity: number }>) {
   try {
-    localStorage.setItem(
-      CHECKOUT_SELECTION_KEY,
-      JSON.stringify({ items }),
-    );
+    localStorage.setItem(CHECKOUT_SELECTION_KEY, JSON.stringify({ items }));
   } catch {
     /* ignore */
   }

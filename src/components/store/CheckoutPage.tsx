@@ -44,7 +44,9 @@ export function CheckoutPage() {
                 Choose a format and add the book to your cart to begin checkout.
               </p>
               <button
-                onClick={() => navigate({ to: "/products/top-5-reasons-why-insurance-agents-fail" })}
+                onClick={() =>
+                  navigate({ to: "/products/top-5-reasons-why-insurance-agents-fail" })
+                }
                 className="mt-6 bg-cyan px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-ink"
               >
                 Browse the Book

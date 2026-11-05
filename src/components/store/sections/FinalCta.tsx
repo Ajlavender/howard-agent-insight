@@ -19,9 +19,9 @@ export function FinalCta() {
               The next lesson is yours to learn.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
-              You don't have to figure everything out the hard way. Get Eric Howard's book and
-              take a closer look at the decisions, habits, and blind spots that shape an
-              insurance career.
+              You don't have to figure everything out the hard way. Get Eric Howard's book and take
+              a closer look at the decisions, habits, and blind spots that shape an insurance
+              career.
             </p>
             <Link
               to="/products/top-5-reasons-why-insurance-agents-fail"

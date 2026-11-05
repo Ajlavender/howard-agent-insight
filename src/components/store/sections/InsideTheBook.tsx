@@ -13,9 +13,9 @@ export function InsideTheBook() {
             53 pages that might change how you see your business.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-white/70">
-            This isn't another textbook about insurance products. It's a closer look at why
-            agents struggle and the decisions that can make the difference between staying
-            stuck and building a better foundation.
+            This isn't another textbook about insurance products. It's a closer look at why agents
+            struggle and the decisions that can make the difference between staying stuck and
+            building a better foundation.
           </p>
         </div>
 
@@ -35,8 +35,8 @@ export function InsideTheBook() {
         </div>
 
         <p className="mt-12 max-w-2xl text-sm text-white/40">
-          The book addresses five reasons. These themes are an editorial summary of the
-          book's subject matter, not official chapter titles.
+          The book addresses five reasons. These themes are an editorial summary of the book's
+          subject matter, not official chapter titles.
         </p>
 
         <Link

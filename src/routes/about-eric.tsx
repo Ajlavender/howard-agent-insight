@@ -10,7 +10,10 @@ export const Route = createFileRoute("/about-eric")({
         content:
           "Eric Howard has spent more than 30 years in the insurance industry. Learn about the experience behind The 7Steps™ System and why he wrote Top 5 Reasons Why Insurance Agents Fail.",
       },
-      { property: "og:title", content: "Meet Eric Howard — Author of Top 5 Reasons Why Insurance Agents Fail" },
+      {
+        property: "og:title",
+        content: "Meet Eric Howard — Author of Top 5 Reasons Why Insurance Agents Fail",
+      },
       {
         property: "og:description",
         content:

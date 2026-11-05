@@ -7,8 +7,7 @@ export const Route = createFileRoute("/privacy-policy")({
       { title: "Privacy Policy — 7Steps Book Store" },
       {
         name: "description",
-        content:
-          "Privacy Policy for the 7Steps Book Store, operated by The 7Steps, LLC.",
+        content: "Privacy Policy for the 7Steps Book Store, operated by The 7Steps, LLC.",
       },
       { property: "og:title", content: "Privacy Policy — 7Steps Book Store" },
       { property: "og:description", content: "Privacy Policy for the 7Steps Book Store." },

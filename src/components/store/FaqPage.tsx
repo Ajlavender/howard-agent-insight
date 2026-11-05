@@ -29,13 +29,19 @@ export function FaqPage() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="flex w-full items-center justify-between gap-4 py-5 text-left"
                   >
-                    <span className="font-display text-base font-semibold text-foreground">{f.q}</span>
+                    <span className="font-display text-base font-semibold text-foreground">
+                      {f.q}
+                    </span>
                     <span className="shrink-0 text-cyan">
                       {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                     </span>
                   </button>
-                  <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"}`}>
-                    <p className="overflow-hidden text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                  <div
+                    className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"}`}
+                  >
+                    <p className="overflow-hidden text-sm leading-relaxed text-muted-foreground">
+                      {f.a}
+                    </p>
                   </div>
                 </div>
               );

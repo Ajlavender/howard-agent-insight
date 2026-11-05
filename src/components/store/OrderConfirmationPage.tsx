@@ -90,7 +90,8 @@ export function OrderConfirmationPage() {
               <h2 className="font-display text-2xl font-bold">Thanks for your order</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 We've received your purchase. A confirmation with your access details has been sent
-                to your email. If you don't see it shortly, reach out to us through the contact page.
+                to your email. If you don't see it shortly, reach out to us through the contact
+                page.
               </p>
             </div>
           ) : (

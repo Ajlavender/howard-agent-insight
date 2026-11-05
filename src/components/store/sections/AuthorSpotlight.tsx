@@ -38,13 +38,11 @@ export function AuthorSpotlight() {
             </p>
 
             <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                Eric Howard didn't build his career by avoiding mistakes. He learned from them.
-              </p>
+              <p>Eric Howard didn't build his career by avoiding mistakes. He learned from them.</p>
               <p>
                 With more than 30 years of experience in the insurance industry, Eric has
-                experienced the frustrations, setbacks, and turning points that many agents
-                know all too well.
+                experienced the frustrations, setbacks, and turning points that many agents know all
+                too well.
               </p>
               <p>
                 Those experiences helped shape The 7Steps™ System and his approach to teaching
@@ -52,8 +50,8 @@ export function AuthorSpotlight() {
               </p>
               <p>
                 Now, in Top 5 Reasons Why Insurance Agents Fail, Eric is sharing the lessons he
-                believes agents need to understand before the same mistakes cost them valuable
-                time and opportunities.
+                believes agents need to understand before the same mistakes cost them valuable time
+                and opportunities.
               </p>
             </div>
 

@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 export interface CartLine {
   priceId: string;
@@ -82,15 +75,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
           }
           return [...prev, line];
         }),
-      remove: (priceId) =>
-        setLines((prev) => prev.filter((l) => l.priceId !== priceId)),
+      remove: (priceId) => setLines((prev) => prev.filter((l) => l.priceId !== priceId)),
       setQty: (priceId, qty) =>
         setLines((prev) =>
           prev
             .map((l) =>
-              l.priceId === priceId
-                ? { ...l, quantity: Math.max(0, Math.min(99, qty)) }
-                : l,
+              l.priceId === priceId ? { ...l, quantity: Math.max(0, Math.min(99, qty)) } : l,
             )
             .filter((l) => l.quantity > 0),
         ),

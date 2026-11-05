@@ -46,9 +46,7 @@ export function FormatComparison() {
     <section className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
-            Your Book
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">Your Book</p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Your way.
           </h2>

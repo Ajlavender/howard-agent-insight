@@ -39,7 +39,8 @@ export function CartDrawer() {
       >
         <div className="flex items-center justify-between border-b border-line px-6 py-5">
           <h2 className="font-display text-lg font-bold">
-            Your Cart {mounted && count > 0 && <span className="text-muted-foreground">({count})</span>}
+            Your Cart{" "}
+            {mounted && count > 0 && <span className="text-muted-foreground">({count})</span>}
           </h2>
           <button
             onClick={() => setOpen(false)}
@@ -70,13 +71,14 @@ export function CartDrawer() {
           <>
             <div className="flex-1 overflow-y-auto px-6 py-4">
               {lines.map((line) => (
-                <div
-                  key={line.priceId}
-                  className="flex gap-4 border-b border-line py-4"
-                >
+                <div key={line.priceId} className="flex gap-4 border-b border-line py-4">
                   <div className="flex h-20 w-16 shrink-0 items-center justify-center bg-soft">
                     {line.image ? (
-                      <img src={line.image} alt={line.name} className="h-full w-full object-cover" />
+                      <img
+                        src={line.image}
+                        alt={line.name}
+                        className="h-full w-full object-cover"
+                      />
                     ) : (
                       <span className="font-display text-xs font-bold text-ink">{line.format}</span>
                     )}
@@ -105,7 +107,9 @@ export function CartDrawer() {
                         </button>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-sm font-semibold">{fmt(line.price * line.quantity)}</span>
+                        <span className="text-sm font-semibold">
+                          {fmt(line.price * line.quantity)}
+                        </span>
                         <button
                           onClick={() => remove(line.priceId)}
                           aria-label="Remove item"
@@ -122,7 +126,9 @@ export function CartDrawer() {
 
             <div className="border-t border-line px-6 py-5">
               <div className="flex items-center justify-between">
-                <span className="text-sm uppercase tracking-widest text-muted-foreground">Subtotal</span>
+                <span className="text-sm uppercase tracking-widest text-muted-foreground">
+                  Subtotal
+                </span>
                 <span className="font-display text-xl font-bold">{fmt(subtotal)}</span>
               </div>
               <p className="mt-2 text-xs text-muted-foreground">

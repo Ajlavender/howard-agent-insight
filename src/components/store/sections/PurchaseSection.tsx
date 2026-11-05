@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Check, ExternalLink, ShoppingBag, Star } from "lucide-react";
-import { resolveFormats, formatPrice, writeCheckoutSelection, type ResolvedFormat } from "@/lib/catalog";
+import {
+  resolveFormats,
+  formatPrice,
+  writeCheckoutSelection,
+  type ResolvedFormat,
+} from "@/lib/catalog";
 import { BOOK, type FormatKey } from "@/lib/book-data";
 import { useCart } from "@/lib/cart";
 import { BookCoverMock } from "./HomeHero";
@@ -55,7 +60,8 @@ export function PurchaseSection() {
             A different perspective.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Read it, listen to it, or keep a copy on your desk. Choose the format that works for you.
+            Read it, listen to it, or keep a copy on your desk. Choose the format that works for
+            you.
           </p>
         </div>
 
@@ -70,7 +76,9 @@ export function PurchaseSection() {
                 <div
                   key={t}
                   className={`flex h-20 w-16 items-center justify-center rounded border text-xs font-medium ${
-                    i === 0 ? "border-cyan bg-ink text-white" : "border-line bg-white text-muted-foreground"
+                    i === 0
+                      ? "border-cyan bg-ink text-white"
+                      : "border-line bg-white text-muted-foreground"
                   }`}
                 >
                   {t}
@@ -99,8 +107,8 @@ export function PurchaseSection() {
             </div>
 
             <p className="mt-6 text-base leading-relaxed text-foreground/80">
-              A closer look at why agents struggle — and the decisions that can make the
-              difference between staying stuck and building a better foundation.
+              A closer look at why agents struggle — and the decisions that can make the difference
+              between staying stuck and building a better foundation.
             </p>
 
             {/* Format selector */}
@@ -123,15 +131,21 @@ export function PurchaseSection() {
                       </span>
                     )}
                     <div className="flex items-center justify-between">
-                      <p className={`text-sm font-bold ${active ? "text-white" : "text-foreground"}`}>
+                      <p
+                        className={`text-sm font-bold ${active ? "text-white" : "text-foreground"}`}
+                      >
                         {f.name}
                       </p>
                       {active && <Check className="h-4 w-4 text-cyan" />}
                     </div>
-                    <p className={`mt-1 text-xs ${active ? "text-white/60" : "text-muted-foreground"}`}>
+                    <p
+                      className={`mt-1 text-xs ${active ? "text-white/60" : "text-muted-foreground"}`}
+                    >
                       {f.tagline}
                     </p>
-                    <p className={`mt-2 text-sm font-semibold ${active ? "text-cyan" : "text-foreground"}`}>
+                    <p
+                      className={`mt-2 text-sm font-semibold ${active ? "text-cyan" : "text-foreground"}`}
+                    >
                       {f.external
                         ? "View on Lulu"
                         : f.available
@@ -144,9 +158,7 @@ export function PurchaseSection() {
             </div>
 
             {/* Description */}
-            {current && (
-              <p className="mt-4 text-sm text-muted-foreground">{current.description}</p>
-            )}
+            {current && <p className="mt-4 text-sm text-muted-foreground">{current.description}</p>}
 
             {/* Quantity + actions */}
             {!current?.external && (
@@ -205,11 +217,13 @@ export function PurchaseSection() {
 
             {current?.external ? (
               <p className="mt-4 text-xs text-muted-foreground">
-                Paperback orders are fulfilled separately through Lulu, the book's print-on-demand retailer.
+                Paperback orders are fulfilled separately through Lulu, the book's print-on-demand
+                retailer.
               </p>
             ) : (
               <p className="mt-4 text-xs text-muted-foreground">
-                Digital editions are delivered after a confirmed purchase. Secure checkout via Payments.
+                Digital editions are delivered after a confirmed purchase. Secure checkout via
+                Payments.
               </p>
             )}
           </div>

@@ -61,7 +61,9 @@ export function ProductPage() {
       {/* Breadcrumb */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground">
-          <Link to="/" className="hover:text-cyan">Home</Link>
+          <Link to="/" className="hover:text-cyan">
+            Home
+          </Link>
           <ChevronRight className="h-3 w-3" />
           <span className="text-foreground">Top 5 Reasons Why Insurance Agents Fail</span>
         </nav>
@@ -112,9 +114,9 @@ export function ProductPage() {
             </div>
 
             <p className="mt-6 text-base leading-relaxed text-foreground/80">
-              A closer look at why agents struggle — and the decisions that can make the
-              difference between staying stuck and building a better foundation. Drawn from
-              Eric Howard's decades in the insurance industry.
+              A closer look at why agents struggle — and the decisions that can make the difference
+              between staying stuck and building a better foundation. Drawn from Eric Howard's
+              decades in the insurance industry.
             </p>
 
             {/* Format selector */}
@@ -137,15 +139,21 @@ export function ProductPage() {
                       </span>
                     )}
                     <div className="flex items-center justify-between">
-                      <p className={`text-sm font-bold ${active ? "text-white" : "text-foreground"}`}>
+                      <p
+                        className={`text-sm font-bold ${active ? "text-white" : "text-foreground"}`}
+                      >
                         {f.name}
                       </p>
                       {active && <Check className="h-4 w-4 text-cyan" />}
                     </div>
-                    <p className={`mt-1 text-xs ${active ? "text-white/60" : "text-muted-foreground"}`}>
+                    <p
+                      className={`mt-1 text-xs ${active ? "text-white/60" : "text-muted-foreground"}`}
+                    >
                       {f.tagline}
                     </p>
-                    <p className={`mt-2 text-sm font-semibold ${active ? "text-cyan" : "text-foreground"}`}>
+                    <p
+                      className={`mt-2 text-sm font-semibold ${active ? "text-cyan" : "text-foreground"}`}
+                    >
                       {f.external
                         ? "View on Lulu"
                         : f.available
@@ -163,9 +171,21 @@ export function ProductPage() {
               <div className="mt-6 flex items-center gap-4">
                 <span className="text-xs uppercase tracking-widest text-muted-foreground">Qty</span>
                 <div className="flex items-center border border-line">
-                  <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="flex h-10 w-10 items-center justify-center hover:bg-muted" aria-label="Decrease quantity">−</button>
+                  <button
+                    onClick={() => setQty((q) => Math.max(1, q - 1))}
+                    className="flex h-10 w-10 items-center justify-center hover:bg-muted"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
                   <span className="w-10 text-center font-medium">{qty}</span>
-                  <button onClick={() => setQty((q) => Math.min(99, q + 1))} className="flex h-10 w-10 items-center justify-center hover:bg-muted" aria-label="Increase quantity">+</button>
+                  <button
+                    onClick={() => setQty((q) => Math.min(99, q + 1))}
+                    className="flex h-10 w-10 items-center justify-center hover:bg-muted"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
             )}
@@ -204,11 +224,13 @@ export function ProductPage() {
 
             {current?.external ? (
               <p className="mt-4 text-xs text-muted-foreground">
-                Paperback orders are fulfilled separately through Lulu, the book's print-on-demand retailer.
+                Paperback orders are fulfilled separately through Lulu, the book's print-on-demand
+                retailer.
               </p>
             ) : (
               <p className="mt-4 text-xs text-muted-foreground">
-                Digital editions are delivered after a confirmed purchase. Secure checkout via Payments.
+                Digital editions are delivered after a confirmed purchase. Secure checkout via
+                Payments.
               </p>
             )}
 
@@ -216,7 +238,9 @@ export function ProductPage() {
             <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line">
               {SPECS.map((s) => (
                 <div key={s.label} className="bg-white p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan">{s.label}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan">
+                    {s.label}
+                  </p>
                   <p className="mt-1 font-display text-base font-bold">{s.value}</p>
                 </div>
               ))}

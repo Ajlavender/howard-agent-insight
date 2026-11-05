@@ -22,16 +22,14 @@ export function ProblemSection() {
               You can give this business everything you've got and still feel stuck.
             </h2>
             <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground">
+              <p>You got licensed. You learned the products. You put in the hours.</p>
               <p>
-                You got licensed. You learned the products. You put in the hours.
+                But nobody really prepared you for the habits, decisions, and mistakes that can make
+                this business harder than it needs to be.
               </p>
               <p>
-                But nobody really prepared you for the habits, decisions, and mistakes that
-                can make this business harder than it needs to be.
-              </p>
-              <p>
-                Eric Howard has watched agents come into the industry with enormous potential,
-                only to struggle with challenges they never saw coming.
+                Eric Howard has watched agents come into the industry with enormous potential, only
+                to struggle with challenges they never saw coming.
               </p>
               <p className="font-medium text-foreground">That's why he wrote this book.</p>
             </div>

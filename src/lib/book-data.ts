@@ -14,7 +14,7 @@ export const BOOK = {
   isbn: "9781105293108",
   pages: 53,
   published: "May 18, 2026",
-  trim: '6 × 9 inches',
+  trim: "6 × 9 inches",
   binding: "Perfect-bound paperback",
   interior: "Full-color interior",
   language: "English",

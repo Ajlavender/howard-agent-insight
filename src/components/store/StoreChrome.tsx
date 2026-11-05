@@ -38,7 +38,10 @@ export function StoreHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
+        <Link
+          to="/"
+          className="flex items-center gap-2 font-display text-lg font-bold tracking-tight"
+        >
           <span className="text-cyan">7</span>
           <span className="hidden sm:inline">STEPS™</span>
         </Link>
@@ -180,27 +183,66 @@ function StoreFooter() {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Navigate</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li><Link to="/" className="hover:text-cyan">The Book</Link></li>
-              <li><Link to="/products/top-5-reasons-why-insurance-agents-fail" className="hover:text-cyan">Inside the Book</Link></li>
-              <li><Link to="/about-eric" className="hover:text-cyan">Meet Eric Howard</Link></li>
-              <li><Link to="/faq" className="hover:text-cyan">FAQs</Link></li>
+              <li>
+                <Link to="/" className="hover:text-cyan">
+                  The Book
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/products/top-5-reasons-why-insurance-agents-fail"
+                  className="hover:text-cyan"
+                >
+                  Inside the Book
+                </Link>
+              </li>
+              <li>
+                <Link to="/about-eric" className="hover:text-cyan">
+                  Meet Eric Howard
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-cyan">
+                  FAQs
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Support</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li><Link to="/contact" className="hover:text-cyan">Contact</Link></li>
-              <li><Link to="/digital-delivery" className="hover:text-cyan">Digital Delivery</Link></li>
-              <li><Link to="/refund-policy" className="hover:text-cyan">Refund Policy</Link></li>
+              <li>
+                <Link to="/contact" className="hover:text-cyan">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/digital-delivery" className="hover:text-cyan">
+                  Digital Delivery
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="hover:text-cyan">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Legal</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li><Link to="/privacy-policy" className="hover:text-cyan">Privacy Policy</Link></li>
-              <li><Link to="/terms-and-conditions" className="hover:text-cyan">Terms & Conditions</Link></li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-cyan">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-and-conditions" className="hover:text-cyan">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

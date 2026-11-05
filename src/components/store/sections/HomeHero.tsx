@@ -18,8 +18,8 @@ export function HomeHero() {
             Most insurance agents don't see failure coming.
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">
-            Discover the mistakes, habits, and blind spots that can quietly derail
-            an insurance career, from a man who's spent decades in the industry.
+            Discover the mistakes, habits, and blind spots that can quietly derail an insurance
+            career, from a man who's spent decades in the industry.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -96,9 +96,7 @@ export function BookCoverMock({ className = "" }: { className?: string }) {
             Eric Howard
           </p>
         </div>
-        <p className="text-[9px] uppercase tracking-widest text-white/40">
-          The 7Steps, LLC
-        </p>
+        <p className="text-[9px] uppercase tracking-widest text-white/40">The 7Steps, LLC</p>
       </div>
     </div>
   );

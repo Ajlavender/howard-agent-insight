@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { buildTrackingPayload, postTrackingEvent } from "@/lib/form-tracking";
 
 export function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -7,7 +8,22 @@ export function ContactPage() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    // CRM integration point — connect to form tracking when authorized.
+    const payload = buildTrackingPayload("contact-form", "Contact Form");
+    payload.formData = {
+      first_name: form.name,
+      email: form.email,
+      calendar_notes: form.message,
+    };
+    payload.formLabels = {
+      first_name: "Name",
+      email: "Email",
+      calendar_notes: "Message",
+    };
+    postTrackingEvent(payload, {
+      customFields: {
+        zErhrw1eCBdsbGP1oWvd: { value: form.subject, label: "Subject" },
+      },
+    });
     setDone(true);
     toast.success("Thanks for reaching out. We'll get back to you soon.");
   };
@@ -36,9 +52,14 @@ export function ContactPage() {
               </p>
             </div>
           ) : (
-            <form onSubmit={submit} className="space-y-5 rounded-lg border border-line bg-white p-8">
+            <form
+              onSubmit={submit}
+              className="space-y-5 rounded-lg border border-line bg-white p-8"
+            >
               <div>
-                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Name</label>
+                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Name
+                </label>
                 <input
                   required
                   value={form.name}
@@ -47,7 +68,9 @@ export function ContactPage() {
                 />
               </div>
               <div>
-                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Email</label>
+                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Email
+                </label>
                 <input
                   required
                   type="email"
@@ -57,7 +80,9 @@ export function ContactPage() {
                 />
               </div>
               <div>
-                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Subject</label>
+                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Subject
+                </label>
                 <input
                   required
                   value={form.subject}
@@ -66,7 +91,9 @@ export function ContactPage() {
                 />
               </div>
               <div>
-                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Message</label>
+                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  Message
+                </label>
                 <textarea
                   required
                   rows={5}

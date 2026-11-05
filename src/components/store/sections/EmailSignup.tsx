@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { buildTrackingPayload, postTrackingEvent } from "@/lib/form-tracking";
 
 export function EmailSignup() {
   const [email, setEmail] = useState("");
@@ -8,7 +9,10 @@ export function EmailSignup() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // CRM integration point — connect to form tracking when authorized.
+    const payload = buildTrackingPayload("newsletter-signup", "Book Newsletter");
+    payload.formData = { email };
+    payload.formLabels = { email: "Email" };
+    postTrackingEvent(payload);
     setDone(true);
     toast.success("You're on the list. We'll keep you updated.");
     setEmail("");
@@ -29,7 +33,10 @@ export function EmailSignup() {
             Thanks for subscribing. Watch your inbox for updates from Eric.
           </p>
         ) : (
-          <form onSubmit={submit} className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <form
+            onSubmit={submit}
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center"
+          >
             <input
               type="email"
               required
