@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Quote } from "lucide-react";
+import { ERIC_PORTRAIT } from "@/lib/book-data";
 
 export function AuthorSpotlight() {
   return (
@@ -8,18 +9,13 @@ export function AuthorSpotlight() {
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-ink">
-              {/* Author portrait placeholder */}
-              <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-charcoal to-ink">
-                <div className="text-center">
-                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border-2 border-white/20 font-display text-5xl font-bold text-white/80">
-                    EH
-                  </div>
-                  <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-                    Eric Howard
-                  </p>
-                </div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-ink/80 to-transparent p-6">
+              <img
+                src={ERIC_PORTRAIT}
+                alt="Eric Howard, author of Top 5 Reasons Why Insurance Agents Fail"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-ink/90 to-transparent p-6">
                 <p className="font-display text-lg font-bold text-white">Eric Howard</p>
                 <p className="text-xs uppercase tracking-widest text-cyan">Mr. 7</p>
               </div>

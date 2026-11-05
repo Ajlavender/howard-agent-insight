@@ -12,6 +12,9 @@ export const BOOK_COVER_FRONT =
 export const BOOK_COVER_BACK =
   "https://images.leadconnectorhq.com/image/f_webp/q_80/r_800/u_https://assets.cdn.filesafe.space/oXLRRxAAsqxglNzfaSGx/media/69e29d092c135a8c83edf46e.png";
 
+export const ERIC_PORTRAIT =
+  "https://vibe.filesafe.space/1780353729082374386/attachments/16cf49b8-6614-4cab-84fe-3b5c3dfbc381.jpg";
+
 export const BOOK = {
   title: "Top 5 Reasons Why Insurance Agents Fail",
   byline: "By Eric Howard",

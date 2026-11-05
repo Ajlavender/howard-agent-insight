@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Quote } from "lucide-react";
 import { FinalCta } from "./sections/FinalCta";
+import { ERIC_PORTRAIT } from "@/lib/book-data";
 
 const TIMELINE = [
   {
@@ -54,17 +55,13 @@ export function AboutEricPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-lg bg-linear-to-br from-charcoal to-ink">
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-2 border-cyan/40 font-display text-6xl font-bold text-cyan">
-                      EH
-                    </div>
-                    <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
-                      Eric Howard
-                    </p>
-                  </div>
-                </div>
+              <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-lg bg-linear-to-br from-charcoal to-ink shadow-2xl shadow-cyan/10">
+                <img
+                  src={ERIC_PORTRAIT}
+                  alt="Eric Howard, author of Top 5 Reasons Why Insurance Agents Fail"
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
