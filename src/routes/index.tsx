@@ -8,6 +8,7 @@ import { BookDetail } from "../components/store/sections/BookDetail";
 import { AuthorSpotlight } from "../components/store/sections/AuthorSpotlight";
 import { AudienceCards } from "../components/store/sections/AudienceCards";
 import { FormatComparison } from "../components/store/sections/FormatComparison";
+import { ReviewsSection } from "../components/store/sections/ReviewsSection";
 import { FaqSection } from "../components/store/sections/FaqSection";
 import { FinalCta } from "../components/store/sections/FinalCta";
 import { EmailSignup } from "../components/store/sections/EmailSignup";
@@ -46,6 +47,7 @@ function Index() {
       <AuthorSpotlight />
       <AudienceCards />
       <FormatComparison />
+      <ReviewsSection />
       <FaqSection />
       <FinalCta />
       <EmailSignup />

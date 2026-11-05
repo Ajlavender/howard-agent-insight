@@ -12,6 +12,7 @@ import { useCart } from "@/lib/cart";
 import { InsideTheBook } from "./sections/InsideTheBook";
 import { AuthorSpotlight } from "./sections/AuthorSpotlight";
 import { FaqSection } from "./sections/FaqSection";
+import { ReviewsSection } from "./sections/ReviewsSection";
 import { FinalCta } from "./sections/FinalCta";
 import { useNavigate } from "@tanstack/react-router";
 
@@ -266,6 +267,7 @@ export function ProductPage() {
 
       <InsideTheBook />
       <AuthorSpotlight />
+      <ReviewsSection />
       <FaqSection />
       <FinalCta />
     </div>
