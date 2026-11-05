@@ -69,7 +69,7 @@
   /* Brand */
   --cyan: oklch(0.91 0.15 195);
   --ink: oklch(0.13 0.005 250);
-  --ink-soft: oklch(0.16 0.006 250);
+  --ink-soft: oklch(0.19 0.006 250);
   --charcoal: oklch(0.27 0.01 250);
   --soft: oklch(0.975 0.002 250);
   --line: oklch(0.92 0.004 250);
