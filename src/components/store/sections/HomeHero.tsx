@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { BOOK } from "@/lib/book-data";
+import { BOOK, BOOK_COVER_FRONT } from "@/lib/book-data";
 
 export function HomeHero() {
   return (
@@ -72,32 +72,17 @@ export function HomeHero() {
 export function BookCoverMock({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`relative h-full w-full overflow-hidden rounded-r-md rounded-l-sm bg-linear-to-br from-charcoal to-ink shadow-2xl shadow-cyan/10 ${className}`}
+      className={`relative h-full w-full overflow-hidden rounded-r-md rounded-l-sm shadow-2xl shadow-cyan/10 ${className}`}
       style={{ transform: "perspective(1200px) rotateY(-12deg)" }}
     >
       {/* spine */}
-      <div className="absolute left-0 top-0 h-full w-2 bg-black/40" />
-      <div className="flex h-full flex-col justify-between p-6 pl-8 text-white">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan">
-            <span className="text-white">7</span>Steps™
-          </p>
-        </div>
-        <div>
-          <p className="font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-            TOP 5 REASONS
-            <br />
-            WHY INSURANCE
-            <br />
-            AGENTS FAIL
-          </p>
-          <div className="mt-4 h-px w-12 bg-cyan" />
-          <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-white/70">
-            Eric Howard
-          </p>
-        </div>
-        <p className="text-[9px] uppercase tracking-widest text-white/40">The 7Steps, LLC</p>
-      </div>
+      <div className="absolute left-0 top-0 z-10 h-full w-2 bg-black/40" />
+      <img
+        src={BOOK_COVER_FRONT}
+        alt="Top 5 Reasons Why Insurance Agents Fail — book cover"
+        className="h-full w-full object-cover"
+        loading="eager"
+      />
     </div>
   );
 }

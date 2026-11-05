@@ -7,9 +7,8 @@ import {
   writeCheckoutSelection,
   type ResolvedFormat,
 } from "@/lib/catalog";
-import { BOOK, SPECS, type FormatKey } from "@/lib/book-data";
+import { BOOK, BOOK_COVER_FRONT, BOOK_COVER_BACK, SPECS, type FormatKey } from "@/lib/book-data";
 import { useCart } from "@/lib/cart";
-import { BookCoverMock } from "./sections/HomeHero";
 import { InsideTheBook } from "./sections/InsideTheBook";
 import { AuthorSpotlight } from "./sections/AuthorSpotlight";
 import { FaqSection } from "./sections/FaqSection";
@@ -29,7 +28,11 @@ export function ProductPage() {
   }, []);
 
   const current = formats.find((f) => f.key === selected) ?? formats[0];
-  const gallery = ["Cover", "Back", "Interior", "Spine"];
+  const gallery = [
+    { label: "Front", src: BOOK_COVER_FRONT, alt: "Front cover" },
+    { label: "Back", src: BOOK_COVER_BACK, alt: "Back cover" },
+  ];
+  const activeSrc = gallery[activeImg]?.src ?? BOOK_COVER_FRONT;
 
   const buyNow = () => {
     if (!current) return;
@@ -74,21 +77,33 @@ export function ProductPage() {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Gallery */}
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <div className="relative aspect-[3/4] w-full max-w-md">
-              <BookCoverMock />
+            <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden rounded-r-md rounded-l-sm bg-ink shadow-2xl shadow-cyan/10">
+              <div className="absolute left-0 top-0 z-10 h-full w-2 bg-black/40" />
+              <img
+                src={activeSrc}
+                alt={gallery[activeImg]?.alt ?? "Book cover"}
+                className="h-full w-full object-cover transition-opacity duration-300"
+                loading="eager"
+              />
             </div>
-            <div className="mt-6 grid grid-cols-4 gap-3">
+            <div className="mt-6 grid grid-cols-2 gap-3">
               {gallery.map((g, i) => (
                 <button
-                  key={g}
+                  key={g.label}
                   onClick={() => setActiveImg(i)}
-                  className={`flex h-20 items-center justify-center rounded border text-xs font-medium transition-colors ${
+                  className={`relative h-24 overflow-hidden rounded border transition-all ${
                     activeImg === i
-                      ? "border-cyan bg-ink text-white"
-                      : "border-line bg-soft text-muted-foreground hover:border-foreground/30"
+                      ? "border-cyan ring-1 ring-cyan"
+                      : "border-line hover:border-foreground/30"
                   }`}
+                  aria-label={`View ${g.label}`}
                 >
-                  {g}
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </button>
               ))}
             </div>

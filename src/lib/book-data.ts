@@ -7,6 +7,11 @@
 export const LULU_PAPERBACK_URL =
   "https://www.lulu.com/shop/eric-howard/top-5-reasons-insurance-agents-fail/paperback/product-95d2p7p.html";
 
+export const BOOK_COVER_FRONT =
+  "https://images.leadconnectorhq.com/image/f_webp/q_80/r_800/u_https://assets.cdn.filesafe.space/oXLRRxAAsqxglNzfaSGx/media/69d15e68a7dcb4cff08cd0ab.png";
+export const BOOK_COVER_BACK =
+  "https://images.leadconnectorhq.com/image/f_webp/q_80/r_800/u_https://assets.cdn.filesafe.space/oXLRRxAAsqxglNzfaSGx/media/69e29d092c135a8c83edf46e.png";
+
 export const BOOK = {
   title: "Top 5 Reasons Why Insurance Agents Fail",
   byline: "By Eric Howard",
