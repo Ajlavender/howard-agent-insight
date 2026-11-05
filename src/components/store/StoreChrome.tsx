@@ -15,7 +15,7 @@ const NAV = [
 
 export function AnnouncementBar() {
   return (
-    <div className="bg-ink pt-safe text-white font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
+    <div className="bg-ink-soft pt-safe text-white font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all border-b border-white/5">
       <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="hidden sm:block text-[10px] tracking-[0.25em] text-white/40">
           OFFICIAL STORE OF ERIC HOWARD
