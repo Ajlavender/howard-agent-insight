@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, ShoppingBag, X, Search, Globe, Check, ChevronDown } from "lucide-react";
 import { CartProvider, useCart } from "../../lib/cart";
 import { CartDrawer } from "./CartDrawer";
 
@@ -10,7 +10,29 @@ const NAV = [
   { label: "Meet Eric", to: "/about-eric" },
   { label: "Reviews", to: "/products/top-5-reasons-why-insurance-agents-fail" },
   { label: "FAQ", to: "/faq" },
+  { label: "Contact", to: "/contact" },
 ];
+
+export function AnnouncementBar() {
+  return (
+    <div className="bg-cyan text-ink font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
+      <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="hidden sm:block text-[10px] tracking-[0.25em] opacity-80">
+          OFFICIAL STORE OF ERIC HOWARD
+        </div>
+        <div className="mx-auto sm:mx-0 flex items-center gap-2">
+          <span>TOP 5 REASONS WHY INSURANCE AGENTS FAIL</span>
+          <span className="hidden md:inline">• AVAILABLE NOW</span>
+        </div>
+        <div className="hidden md:flex items-center gap-3 text-[10px]">
+          <span className="flex items-center gap-1 font-semibold">
+            <Globe className="h-3 w-3 text-ink" /> USD ($)
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function StoreHeader() {
   const { count, setOpen } = useCart();
@@ -19,7 +41,7 @@ export function StoreHeader() {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -31,128 +53,161 @@ export function StoreHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-ink/95 text-white backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-transparent text-white"
+          ? "bg-ink/95 text-white backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/40"
+          : "bg-ink text-white border-b border-white/10"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link
-          to="/"
-          className="flex items-center gap-2 font-display text-lg font-bold tracking-tight"
-        >
-          <span className="text-cyan">7</span>
-          <span className="hidden sm:inline">STEPS™</span>
-        </Link>
-
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.label}
-              to={item.to}
-              className="text-xs font-medium uppercase tracking-widest text-white/80 transition-colors hover:text-cyan"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2 sm:gap-4">
-          <button
-            onClick={() => setOpen(true)}
-            aria-label="Open cart"
-            className="relative flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10"
-          >
-            <ShoppingBag className="h-5 w-5" />
-            {count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan px-1 text-[10px] font-bold text-ink">
-                {count}
-              </span>
-            )}
-          </button>
-          <Link
-            to="/products/top-5-reasons-why-insurance-agents-fail"
-            className="hidden bg-cyan px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.03] sm:inline-block"
-          >
-            Get the Book
-          </Link>
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Left Branding */}
+        <div className="flex items-center gap-6">
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-white hover:bg-white/10 lg:hidden"
           >
             <Menu className="h-5 w-5" />
+          </button>
+
+          <Link
+            to="/"
+            className="group flex items-center gap-2.5 font-display text-xl font-extrabold tracking-tighter"
+          >
+            <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-cyan text-ink font-black text-lg transition-transform group-hover:scale-105">
+              7
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="font-display text-base font-black tracking-widest text-white leading-none">
+                7STEPS<span className="text-cyan">™</span>
+              </span>
+              <span className="text-[9px] uppercase tracking-[0.25em] text-white/50 leading-tight">
+                Publishing
+              </span>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-9 lg:flex">
+          {NAV.map((item) => {
+            const isActive = location.pathname === item.to;
+            return (
+              <Link
+                key={item.label}
+                to={item.to}
+                className={`relative text-xs font-bold uppercase tracking-[0.2em] transition-colors py-1 ${
+                  isActive ? "text-cyan" : "text-white/80 hover:text-cyan"
+                }`}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-cyan rounded-full" />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right Actions */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <Link
+            to="/products/top-5-reasons-why-insurance-agents-fail"
+            className="hidden sm:inline-flex items-center gap-2 bg-cyan px-6 py-3 text-xs font-extrabold uppercase tracking-[0.2em] text-ink rounded-full transition-all hover:bg-white hover:text-ink hover:shadow-[0_0_20px_rgba(2,250,251,0.4)]"
+          >
+            Get The Book
+          </Link>
+
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Open shopping cart"
+            className="group relative flex h-11 items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-4 text-white transition-all hover:border-cyan hover:bg-white/10"
+          >
+            <ShoppingBag className="h-4 w-4 text-cyan transition-transform group-hover:scale-110" />
+            <span className="hidden sm:inline text-xs font-bold uppercase tracking-widest">
+              Cart
+            </span>
+            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan px-1.5 text-[10px] font-black text-ink">
+              {count}
+            </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Slideout Nav */}
       <div
         className={`fixed inset-0 z-50 lg:hidden ${
           mobileOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
         <div
-          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300 ${
             mobileOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setMobileOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 flex h-full w-80 max-w-[85%] flex-col bg-ink p-6 text-white transition-transform duration-300 ${
-            mobileOpen ? "translate-x-0" : "translate-x-full"
+          className={`absolute left-0 top-0 flex h-full w-85 max-w-[85%] flex-col bg-ink p-6 text-white shadow-2xl border-r border-white/10 transition-transform duration-300 ${
+            mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between">
-            <span className="font-display text-lg font-bold">
-              <span className="text-cyan">7</span>STEPS™
-            </span>
+          <div className="flex items-center justify-between border-b border-white/10 pb-5">
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded bg-cyan text-ink font-bold text-sm">
+                7
+              </span>
+              <span className="font-display text-base font-bold tracking-wider">7STEPS™ STORE</span>
+            </div>
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/10"
+              className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 text-white/70 hover:text-white"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
-          <nav className="mt-10 flex flex-col gap-1">
+
+          <div className="my-6 rounded-lg border border-cyan/20 bg-cyan/5 p-4">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-cyan">
+              Top 5 Reasons Why Insurance Agents Fail
+            </p>
+            <p className="mt-1 text-xs text-white/70">Official Book by Eric Howard</p>
+          </div>
+
+          <nav className="flex flex-col divide-y divide-white/10">
             {NAV.map((item) => (
               <Link
                 key={item.label}
                 to={item.to}
-                className="border-b border-white/10 py-4 text-sm font-medium uppercase tracking-widest text-white/80 transition-colors hover:text-cyan"
+                className="py-4 text-xs font-bold uppercase tracking-[0.2em] text-white/90 transition-colors hover:text-cyan flex items-center justify-between"
               >
                 {item.label}
+                <span className="text-white/30 text-xs">→</span>
               </Link>
             ))}
           </nav>
-          <Link
-            to="/products/top-5-reasons-why-insurance-agents-fail"
-            className="mt-auto bg-cyan px-5 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-ink"
-          >
-            Get the Book
-          </Link>
+
+          <div className="mt-auto pt-6 border-t border-white/10">
+            <Link
+              to="/products/top-5-reasons-why-insurance-agents-fail"
+              className="flex w-full items-center justify-center rounded-full bg-cyan py-4 text-xs font-black uppercase tracking-[0.2em] text-ink shadow-lg shadow-cyan/20"
+            >
+              Get The Book Now
+            </Link>
+            <p className="mt-4 text-center text-[10px] text-white/40 uppercase tracking-widest">
+              Available in Paperback, E-Book & Audiobook
+            </p>
+          </div>
         </div>
       </div>
     </header>
   );
 }
 
-export function AnnouncementBar() {
-  return (
-    <div className="bg-cyan text-ink">
-      <div className="mx-auto flex h-9 max-w-7xl items-center justify-center px-4 text-center text-[11px] font-bold uppercase tracking-widest sm:text-xs">
-        Top 5 Reasons Why Insurance Agents Fail — Available Now
-      </div>
-    </div>
-  );
-}
-
 export function StoreChrome({ children }: { children: ReactNode }) {
   return (
     <CartProvider>
-      <div className="flex min-h-screen flex-col bg-background">
+      <div className="flex min-h-screen flex-col bg-background font-body text-foreground antialiased selection:bg-cyan selection:text-ink">
         <AnnouncementBar />
         <StoreHeader />
         <main className="flex-1">{children}</main>
@@ -165,91 +220,127 @@ export function StoreChrome({ children }: { children: ReactNode }) {
 
 function StoreFooter() {
   return (
-    <footer className="bg-ink text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-1">
-            <div className="font-display text-2xl font-bold">
-              <span className="text-cyan">7</span>STEPS™
+    <footer className="bg-ink text-white border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-12">
+          {/* Brand Info */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded bg-cyan text-ink font-black text-xl">
+                7
+              </div>
+              <span className="font-display text-2xl font-black tracking-tight text-white">
+                7STEPS<span className="text-cyan">™</span>
+              </span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/60">
-              Top 5 Reasons Why Insurance Agents Fail
-              <br />
-              By Eric Howard
+            <p className="text-sm leading-relaxed text-white/70 max-w-md">
+              Official storefront for <strong>Top 5 Reasons Why Insurance Agents Fail</strong> by
+              Eric Howard. Empowering insurance professionals with practical clarity, business
+              discipline, and real-world perspective.
             </p>
-            <p className="mt-4 text-xs text-white/40">The 7Steps, LLC</p>
+            <div className="flex items-center gap-3 text-xs text-white/50">
+              <span className="inline-block h-2 w-2 rounded-full bg-cyan animate-pulse" />
+              <span>Official Publisher Store • 7Steps LLC</span>
+            </div>
           </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Navigate</h4>
-            <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li>
-                <Link to="/" className="hover:text-cyan">
-                  The Book
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/products/top-5-reasons-why-insurance-agents-fail"
-                  className="hover:text-cyan"
-                >
-                  Inside the Book
-                </Link>
-              </li>
-              <li>
-                <Link to="/about-eric" className="hover:text-cyan">
-                  Meet Eric Howard
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="hover:text-cyan">
-                  FAQs
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation Links */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div>
+              <h4 className="text-xs font-extrabold uppercase tracking-[0.25em] text-cyan">
+                The Book
+              </h4>
+              <ul className="mt-4 space-y-3 text-xs font-medium text-white/70">
+                <li>
+                  <Link to="/" className="hover:text-cyan transition-colors">
+                    Official Homepage
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/top-5-reasons-why-insurance-agents-fail"
+                    className="hover:text-cyan transition-colors"
+                  >
+                    Product Detail Page
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about-eric" className="hover:text-cyan transition-colors">
+                    Meet Eric Howard
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faq" className="hover:text-cyan transition-colors">
+                    Frequently Asked Questions
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Support</h4>
-            <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li>
-                <Link to="/contact" className="hover:text-cyan">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/digital-delivery" className="hover:text-cyan">
-                  Digital Delivery
-                </Link>
-              </li>
-              <li>
-                <Link to="/refund-policy" className="hover:text-cyan">
-                  Refund Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h4 className="text-xs font-extrabold uppercase tracking-[0.25em] text-cyan">
+                Customer Care
+              </h4>
+              <ul className="mt-4 space-y-3 text-xs font-medium text-white/70">
+                <li>
+                  <Link to="/contact" className="hover:text-cyan transition-colors">
+                    Contact Support
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/digital-delivery" className="hover:text-cyan transition-colors">
+                    Digital Delivery Info
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/refund-policy" className="hover:text-cyan transition-colors">
+                    Refund & Return Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-cyan">Legal</h4>
-            <ul className="mt-4 space-y-3 text-sm text-white/70">
-              <li>
-                <Link to="/privacy-policy" className="hover:text-cyan">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms-and-conditions" className="hover:text-cyan">
-                  Terms & Conditions
-                </Link>
-              </li>
-            </ul>
+            <div>
+              <h4 className="text-xs font-extrabold uppercase tracking-[0.25em] text-cyan">
+                Legal & Terms
+              </h4>
+              <ul className="mt-4 space-y-3 text-xs font-medium text-white/70">
+                <li>
+                  <Link to="/privacy-policy" className="hover:text-cyan transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms-and-conditions" className="hover:text-cyan transition-colors">
+                    Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center">
-          <p>© 2026 The 7Steps, LLC. All Rights Reserved.</p>
-          <p>Designed & Powered by Lavender Marketing & Co.</p>
+        {/* Payment Badges & Copyright */}
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40">
+          <p>© 2026 The 7Steps, LLC. All Rights Reserved. Designed for Eric Howard.</p>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/60">
+              VISA
+            </span>
+            <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/60">
+              MASTERCARD
+            </span>
+            <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/60">
+              AMEX
+            </span>
+            <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/60">
+              APPLE PAY
+            </span>
+            <span className="rounded border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/60">
+              GOOGLE PAY
+            </span>
+          </div>
         </div>
       </div>
     </footer>
