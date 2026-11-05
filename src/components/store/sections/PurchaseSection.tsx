@@ -89,7 +89,7 @@ export function PurchaseSection() {
 
           {/* Purchase panel */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               {BOOK.creator}
             </p>
             <h3 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight">
@@ -100,7 +100,7 @@ export function PurchaseSection() {
             <div className="mt-4 flex items-center gap-2">
               <div className="flex">
                 {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-cyan text-cyan" />
+                  <Star key={i} className="h-4 w-4 fill-foreground/80 text-foreground/80" />
                 ))}
               </div>
               <span className="text-xs text-muted-foreground">A book worth reading twice</span>
@@ -144,7 +144,7 @@ export function PurchaseSection() {
                       {f.tagline}
                     </p>
                     <p
-                      className={`mt-2 text-sm font-semibold ${active ? "text-cyan" : "text-foreground"}`}
+                      className={`mt-2 text-sm font-semibold ${active ? "text-white" : "text-foreground"}`}
                     >
                       {f.external
                         ? "View on Lulu"

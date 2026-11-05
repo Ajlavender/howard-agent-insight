@@ -6,7 +6,7 @@ export function InsideTheBook() {
     <section id="inside" className="bg-ink py-24 text-white sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
             Between the Covers
           </p>
           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-balance sm:text-5xl">
@@ -25,7 +25,9 @@ export function InsideTheBook() {
               key={t.n}
               className="group border-t border-white/10 pt-8 transition-colors hover:border-cyan"
             >
-              <p className="font-display text-6xl font-bold text-cyan">{t.n}</p>
+              <p className="font-display text-6xl font-bold text-white/15 transition-colors group-hover:text-cyan">
+                {t.n}
+              </p>
               <h3 className="mt-4 font-display text-xl font-bold uppercase tracking-tight">
                 {t.title}
               </h3>

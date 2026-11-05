@@ -10,7 +10,7 @@ export function MarqueeStrip() {
             <span className="font-display text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
               {item}
             </span>
-            <span className="text-cyan">•</span>
+            <span className="text-white/25">•</span>
           </div>
         ))}
       </div>

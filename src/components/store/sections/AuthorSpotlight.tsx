@@ -11,7 +11,7 @@ export function AuthorSpotlight() {
               {/* Author portrait placeholder */}
               <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-charcoal to-ink">
                 <div className="text-center">
-                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border-2 border-cyan/40 font-display text-5xl font-bold text-cyan">
+                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-full border-2 border-white/20 font-display text-5xl font-bold text-white/80">
                     EH
                   </div>
                   <p className="mt-4 text-xs uppercase tracking-widest text-white/40">
@@ -27,7 +27,7 @@ export function AuthorSpotlight() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               Meet the Author
             </p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
@@ -55,8 +55,8 @@ export function AuthorSpotlight() {
               </p>
             </div>
 
-            <blockquote className="mt-8 border-l-2 border-cyan pl-6">
-              <Quote className="h-6 w-6 text-cyan" />
+            <blockquote className="mt-8 border-l-2 border-foreground/20 pl-6">
+              <Quote className="h-6 w-6 text-foreground/40" />
               <p className="mt-2 font-display text-xl font-medium italic text-foreground">
                 "I'm teaching you my pitfalls so that you don't fall into the pit."
               </p>

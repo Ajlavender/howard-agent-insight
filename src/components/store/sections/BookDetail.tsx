@@ -8,7 +8,7 @@ export function BookDetail() {
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div className="flex justify-center">
             <div className="relative aspect-[3/4] w-full max-w-sm">
-              <div className="absolute -inset-6 rounded-full bg-cyan/10 blur-3xl" />
+              <div className="absolute -inset-6 rounded-full bg-white/5 blur-3xl" />
               <BookCoverMock />
             </div>
           </div>
@@ -25,7 +25,7 @@ export function BookDetail() {
             <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-white/10">
               {SPECS.map((s) => (
                 <div key={s.label} className="bg-charcoal p-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-cyan">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-white/40">
                     {s.label}
                   </p>
                   <p className="mt-1 font-display text-lg font-bold">{s.value}</p>
@@ -34,7 +34,7 @@ export function BookDetail() {
             </div>
 
             <div className="mt-8 rounded-lg border border-white/10 p-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan">
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/40">
                 Look Inside
               </p>
               <p className="mt-2 text-sm text-white/60">

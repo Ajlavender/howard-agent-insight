@@ -9,7 +9,9 @@ export function FaqSection() {
     <section id="faq" className="bg-soft py-24 sm:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">FAQ</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+            FAQ
+          </p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Questions, answered.
           </h2>
@@ -27,7 +29,7 @@ export function FaqSection() {
                   <span className="font-display text-base font-semibold text-foreground">
                     {f.q}
                   </span>
-                  <span className="shrink-0 text-cyan">
+                  <span className="shrink-0 text-foreground/60">
                     {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
                   </span>
                 </button>

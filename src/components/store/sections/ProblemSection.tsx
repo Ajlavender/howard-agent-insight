@@ -15,7 +15,7 @@ export function ProblemSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               The Problem
             </p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-balance sm:text-5xl">
@@ -46,9 +46,9 @@ export function ProblemSection() {
             {POINTS.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center gap-4 border-l-2 border-cyan bg-soft p-5 transition-transform hover:translate-x-1"
+                className="flex items-center gap-4 border-l-2 border-foreground/15 bg-soft p-5 transition-all hover:translate-x-1 hover:border-cyan"
               >
-                <span className="font-display text-2xl font-bold text-cyan">
+                <span className="font-display text-2xl font-bold text-muted-foreground/60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="font-medium text-foreground">{p}</p>

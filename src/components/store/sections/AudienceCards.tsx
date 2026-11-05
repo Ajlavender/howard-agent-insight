@@ -18,7 +18,7 @@ export function AudienceCards() {
               to="/products/top-5-reasons-why-insurance-agents-fail"
               className="group flex flex-col rounded-lg border border-line bg-white p-8 transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-xl"
             >
-              <span className="font-display text-3xl font-bold text-cyan">
+              <span className="font-display text-3xl font-bold text-muted-foreground/50">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-display text-lg font-bold uppercase tracking-tight">

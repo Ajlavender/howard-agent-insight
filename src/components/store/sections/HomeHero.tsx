@@ -6,12 +6,12 @@ export function HomeHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-ink text-white">
       {/* ambient cyan glow */}
-      <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full bg-cyan/20 blur-[120px]" />
-      <div className="pointer-events-none absolute left-1/4 top-0 h-px w-1/2 bg-linear-to-r from-transparent via-cyan/40 to-transparent" />
+      <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full bg-cyan/10 blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/4 top-0 h-px w-1/2 bg-linear-to-r from-transparent via-white/15 to-transparent" />
 
       <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-4 pt-28 pb-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
             {BOOK.creator}
           </p>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
@@ -50,7 +50,7 @@ export function HomeHero() {
         {/* Book visual */}
         <div className="relative flex items-center justify-center">
           <div className="relative">
-            <div className="absolute -inset-8 rounded-full bg-cyan/10 blur-3xl" />
+            <div className="absolute -inset-8 rounded-full bg-white/5 blur-3xl" />
             <div className="relative aspect-[3/4] w-64 sm:w-80 lg:w-96">
               <BookCoverMock />
             </div>

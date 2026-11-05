@@ -136,7 +136,7 @@ export function CartDrawer() {
               </p>
               <button
                 onClick={checkout}
-                className="mt-4 w-full bg-cyan py-4 text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.01]"
+                className="mt-4 w-full bg-ink py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-cyan hover:text-ink"
               >
                 Secure Checkout
               </button>

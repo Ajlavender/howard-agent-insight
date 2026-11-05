@@ -15,18 +15,18 @@ const NAV = [
 
 export function AnnouncementBar() {
   return (
-    <div className="bg-cyan text-ink font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
+    <div className="bg-ink text-white font-mono font-bold text-[11px] uppercase tracking-[0.2em] transition-all">
       <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="hidden sm:block text-[10px] tracking-[0.25em] opacity-80">
+        <div className="hidden sm:block text-[10px] tracking-[0.25em] text-white/40">
           OFFICIAL STORE OF ERIC HOWARD
         </div>
         <div className="mx-auto sm:mx-0 flex items-center gap-2">
-          <span>TOP 5 REASONS WHY INSURANCE AGENTS FAIL</span>
-          <span className="hidden md:inline">• AVAILABLE NOW</span>
+          <span className="text-white/90">TOP 5 REASONS WHY INSURANCE AGENTS FAIL</span>
+          <span className="hidden md:inline text-cyan">• AVAILABLE NOW</span>
         </div>
-        <div className="hidden md:flex items-center gap-3 text-[10px]">
+        <div className="hidden md:flex items-center gap-3 text-[10px] text-white/40">
           <span className="flex items-center gap-1 font-semibold">
-            <Globe className="h-3 w-3 text-ink" /> USD ($)
+            <Globe className="h-3 w-3" /> USD ($)
           </span>
         </div>
       </div>
@@ -167,11 +167,11 @@ export function StoreHeader() {
             </button>
           </div>
 
-          <div className="my-6 rounded-lg border border-cyan/20 bg-cyan/5 p-4">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-cyan">
+          <div className="my-6 rounded-lg border border-white/10 bg-white/5 p-4">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-white">
               Top 5 Reasons Why Insurance Agents Fail
             </p>
-            <p className="mt-1 text-xs text-white/70">Official Book by Eric Howard</p>
+            <p className="mt-1 text-xs text-white/50">Official Book by Eric Howard</p>
           </div>
 
           <nav className="flex flex-col divide-y divide-white/10">
